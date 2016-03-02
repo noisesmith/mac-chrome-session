@@ -1,0 +1,27 @@
+#!/bin/sh
+
+if [ ${PROFILE} ]
+then true
+else if [ ${1} ]
+then PROFILE="${1}"
+else PROFILE=ChromeAlternate
+fi
+fi
+
+if [ ${CHROME} ]
+then true
+else if [ ${2} ]
+then CHROME="${2}"
+else CHROME='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+fi
+fi
+
+if [ ${DATA_DIR} ]
+then true
+else if [ ${3} ]
+then DATA_DIR="${3}"
+else DATA_DIR="${HOME}/Library/Application Support/Google"
+fi
+fi
+
+"${CHROME}" --user-data-dir="${DATA_DIR}/${PROFILE}" > /dev/null 2>1&
