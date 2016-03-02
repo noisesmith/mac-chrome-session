@@ -24,4 +24,4 @@ else DATA_DIR="${HOME}/Library/Application Support/Google"
 fi
 fi
 
-"${CHROME}" --user-data-dir="${DATA_DIR}/${PROFILE}" > /dev/null 2>1&
+"${CHROME}" --user-data-dir="${DATA_DIR}/${PROFILE}" > /dev/null 2>&1&
